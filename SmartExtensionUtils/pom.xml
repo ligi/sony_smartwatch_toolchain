@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sonyericsson.extras.liveware</groupId>
+	<artifactId>extension-util</artifactId>
+	<packaging>apklib</packaging>
+	<version>3.0-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<version>4.0.1.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sonyericsson.extras.liveware</groupId>
+		        <artifactId>extension-sdk</artifactId>
+		        <version>3.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<version>3.6.1</version>
+				<extensions>true</extensions>
+				<configuration>
+					<androidManifestFile>${project.basedir}/src/main/AndroidManifest.xml</androidManifestFile>
+					<resourceDirectory>${project.basedir}/src/main/res</resourceDirectory>
+					<sdk>
+						<platform>14</platform>
+					</sdk>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+</project>
